@@ -4,8 +4,9 @@
   tasks:
     - name: Download notepad++ 
       win_get_url:
-        url: 'http://192.168.2.2/cdn/windows/npp.7.3.3.Installer.exe'
+        url: 'https://artifactory.lab.ltsai.com/artifactory/web/npp.7.3.3.Installer.exe'
         dest: 'C:\Users\Administrator\Downloads\npp.7.3.3.Installer.exe'
+        skip_certificate_validation: yes
 
     - name: Install notepad++
       win_command: 'C:\Users\Administrator\Downloads\npp.7.3.3.Installer.exe /S'

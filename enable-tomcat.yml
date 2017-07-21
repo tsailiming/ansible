@@ -4,16 +4,18 @@
   tasks:
     - name: Download JRE 
       win_get_url:
-        url: 'http://192.168.2.2/cdn/windows/jre-8u131-windows-x64.exe'
-        dest: 'C:\Users\Administrator\Downloads\jre-8u131-windows-x64.exe'
+        url: 'https://artifactory.lab.ltsai.com/artifactory/web/jre-8u141-windows-x64.exe'
+        dest: 'C:\Users\Administrator\Downloads\jre-8u141-windows-x64.exe'
+        skip_certificate_validation: yes
 
     - name: Install JRE
-      win_command: 'C:\Users\Administrator\Downloads\jre-8u131-windows-x64.exe /s INSTALLDIR="c:\jre" /log install.log'
+      win_command: 'C:\Users\Administrator\Downloads\jre-8u141-windows-x64.exe /s INSTALLDIR="c:\jre" /log install.log'
 
     - name: Download the Apache Tomcat installer
       win_get_url:
-        url: 'http://192.168.2.2/cdn/windows/apache-tomcat-7.0.77.exe'
+        url: 'https://artifactory.lab.ltsai.com/artifactory/web/apache-tomcat-7.0.77.exe'
         dest: 'C:\Users\Administrator\Downloads\apache-tomcat-7.0.77.exe'
+        skip_certificate_validation: yes
 
     - name: Install Tomcat7
       win_command: 'C:\Users\Administrator\Downloads\apache-tomcat-7.0.77.exe /S /D=C:\Tomcat'
